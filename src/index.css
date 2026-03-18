@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+:root {
+  --terminal-bg: #0d1117;
+  --terminal-text: #c9d1d9;
+  --terminal-green: #3fb950;
+  --terminal-blue: #58a6ff;
+  --terminal-cursor: #c9d1d9;
+}
+
+body {
+  margin: 0;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: var(--font-mono);
+  overflow: hidden; /* Prevent scrolling on body, handle in terminal */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #161b22;
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b949e;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
