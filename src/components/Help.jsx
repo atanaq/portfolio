@@ -2,41 +2,41 @@ import React from 'react';
 
 const Help = ({ lang }) => {
   const commands = [
-    { 
-      cmd: 'help', 
-      desc: lang === 'en' ? 'Show this help message' : 'Показать справку' 
+    {
+      cmd: 'help',
+      desc: lang === 'en' ? 'Show this help message' : 'Показать справку'
     },
-    { 
-      cmd: 'about', 
-      desc: lang === 'en' ? 'Display information about me' : 'Информация обо мне' 
+    {
+      cmd: 'about',
+      desc: lang === 'en' ? 'Display information about me' : 'Информация обо мне'
     },
-    { 
-      cmd: 'skills', 
-      desc: lang === 'en' ? 'List technical skills' : 'Список технических навыков' 
+    {
+      cmd: 'skills',
+      desc: lang === 'en' ? 'List technical skills' : 'Список технических навыков'
     },
-    { 
-      cmd: 'projects', 
-      desc: lang === 'en' ? 'Show portfolio projects' : 'Показать проекты' 
+    {
+      cmd: 'projects',
+      desc: lang === 'en' ? 'Show portfolio projects' : 'Показать проекты'
     },
-    { 
-      cmd: 'contact', 
-      desc: lang === 'en' ? 'Show contact details' : 'Контактные данные' 
+    {
+      cmd: 'contact',
+      desc: lang === 'en' ? 'Show contact details' : 'Контактные данные'
     },
-    { 
-      cmd: 'lang', 
-      desc: lang === 'en' ? 'Switch language (e.g., lang ru)' : 'Сменить язык (например, lang en)' 
+    {
+      cmd: 'lang',
+      desc: lang === 'en' ? 'Switch language (e.g., lang ru)' : 'Сменить язык (например, lang en)'
     },
-    { 
-      cmd: 'clear', 
-      desc: lang === 'en' ? 'Clear the terminal' : 'Очистить терминал' 
+    {
+      cmd: 'clear',
+      desc: lang === 'en' ? 'Clear the terminal' : 'Очистить терминал'
     },
-    { 
-      cmd: 'theme', 
-      desc: lang === 'en' ? 'Toggle dark/light mode' : 'Сменить тему' 
-    },
-    { 
-      cmd: 'all', 
-      desc: lang === 'en' ? 'Run all main commands' : 'Выполнить все команды' 
+    // { 
+    //   cmd: 'theme', 
+    //   desc: lang === 'en' ? 'Toggle dark/light mode' : 'Сменить тему' 
+    // },
+    {
+      cmd: 'all',
+      desc: lang === 'en' ? 'Run all main commands' : 'Выполнить все команды'
     },
   ];
 

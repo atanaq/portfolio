@@ -23,13 +23,13 @@ export const getCommandOutput = (cmd, context) => {
     case 'welcome':
       return (
         <div className="mb-4">
-            <pre className="text-terminal-green font-bold text-xs md:text-sm leading-tight mb-4 whitespace-pre-wrap font-mono">
-              {portfolioData.asciiArt}
-            </pre>
-            <p>Welcome to the interactive portfolio terminal.</p>
-            <p>Type <span className="text-terminal-green font-bold">'help'</span> to see available commands.</p>
-            <p>To switch language type <span className="text-terminal-green font-bold">'lang ru'</span>.</p>
-            <p className="mt-2 text-gray-500 italic">Try 'all' to see everything at once!</p>
+          <pre className="text-terminal-green font-bold text-xs md:text-sm leading-tight mb-4 whitespace-pre-wrap font-mono">
+            {portfolioData.asciiArt}
+          </pre>
+          <p>Welcome to the interactive portfolio terminal.</p>
+          <p>Type <span className="text-terminal-green font-bold">'help'</span> to see available commands.</p>
+          <p>To switch language type <span className="text-terminal-green font-bold">'lang ru'</span>.</p>
+          <p className="mt-2 text-gray-500 italic">Try 'all' to see everything at once!</p>
         </div>
       );
 
@@ -73,40 +73,47 @@ export const getCommandOutput = (cmd, context) => {
       return <p>{new Date().toString()}</p>;
 
     // Сменить тему (светлая/темная)
-    case 'theme':
-      const newTheme = context.theme === 'dark' ? 'light' : 'dark';
-      context.setTheme(newTheme);
-      return <p>{context.lang === 'en' ? `Theme switched to ${newTheme} mode.` : `Тема изменена на ${newTheme}.`}</p>;
+    // case 'theme':
+    //   const newTheme = context.theme === 'dark' ? 'light' : 'dark';
+    //   context.setTheme(newTheme);
+
+    //   return (
+    //     <p>
+    //       {context.lang === 'en'
+    //         ? `Theme switched to ${newTheme} mode.`
+    //         : `Тема изменена на ${newTheme}.`}
+    //     </p>
+    //   );
 
     // Сменить язык
     case 'lang':
       if (args[0]) {
-         if (args[0] === 'en' || args[0] === 'ru') {
-             context.setLang(args[0]);
-             return <p className="text-terminal-green">Language switched to {args[0].toUpperCase()}</p>;
-         } else {
-             return <p className="text-red-400">Usage: lang [en|ru]</p>;
-         }
+        if (args[0] === 'en' || args[0] === 'ru') {
+          context.setLang(args[0]);
+          return <p className="text-terminal-green">Language switched to {args[0].toUpperCase()}</p>;
+        } else {
+          return <p className="text-red-400">Usage: lang [en|ru]</p>;
+        }
       } else {
-          const nextLang = context.lang === 'en' ? 'ru' : 'en';
-          context.setLang(nextLang);
-          return <p className="text-terminal-green">Language switched to {nextLang.toUpperCase()}</p>;
+        const nextLang = context.lang === 'en' ? 'ru' : 'en';
+        context.setLang(nextLang);
+        return <p className="text-terminal-green">Language switched to {nextLang.toUpperCase()}</p>;
       }
 
     // Показать всё сразу
     case 'all':
       return (
-          <div className="space-y-8">
-              <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.about}</h2><About lang={context.lang} /></div>
-              <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.skills}</h2><SkillList lang={context.lang} /></div>
-              <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.projects}</h2><ProjectList lang={context.lang} /></div>
-              <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.contact}</h2>
-                  <div className="mt-2 space-y-2 font-mono">
-                      <p>Email: <a href={`mailto:${portfolioData.contact.email}`} className="text-blue-400 hover:underline">{portfolioData.contact.email}</a></p>
-                      <p>GitHub: <a href={`https://${portfolioData.contact.github}`} target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">{portfolioData.contact.github}</a></p>
-                  </div>
-              </div>
+        <div className="space-y-8">
+          <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.about}</h2><About lang={context.lang} /></div>
+          <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.skills}</h2><SkillList lang={context.lang} /></div>
+          <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.projects}</h2><ProjectList lang={context.lang} /></div>
+          <div><h2 className="text-xl font-bold text-terminal-green mb-2">{portfolioData[context.lang].sectionTitles.contact}</h2>
+            <div className="mt-2 space-y-2 font-mono">
+              <p>Email: <a href={`mailto:${portfolioData.contact.email}`} className="text-blue-400 hover:underline">{portfolioData.contact.email}</a></p>
+              <p>GitHub: <a href={`https://${portfolioData.contact.github}`} target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">{portfolioData.contact.github}</a></p>
+            </div>
           </div>
+        </div>
       );
 
     // Обработка пустой команды

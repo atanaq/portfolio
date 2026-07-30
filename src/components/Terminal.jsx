@@ -13,6 +13,17 @@ const Terminal = () => {
   const [theme, setTheme] = useState('dark');
   const [lang, setLang] = useState('en');
 
+  // Синхронизируем класс темы на <html>
+  useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    }
+  }, [theme]);
+
   // Создаем контекст команд, который будет передан в getCommandOutput
   const commandContext = {
     lang,
@@ -121,19 +132,33 @@ const Terminal = () => {
     };
 
   return (
-    <div className={`flex flex-col h-screen w-full bg-black font-mono text-gray-200 overflow-hidden relative selection:bg-terminal-green selection:text-black`}>
+    <div
+      className="flex flex-col h-screen w-full font-mono overflow-hidden relative"
+      style={{
+        backgroundColor: 'var(--terminal-bg)',
+        color: 'var(--terminal-text)',
+        transition: 'background-color 0.3s ease, color 0.3s ease',
+      }}
+    >
       {/* Top Bar (Mac-like) */}
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-800 shrink-0">
+      <div
+        className="flex items-center justify-between px-4 py-2 shrink-0"
+        style={{
+          backgroundColor: 'var(--terminal-bar-bg)',
+          borderBottom: '1px solid var(--terminal-bar-border)',
+          transition: 'background-color 0.3s ease, border-color 0.3s ease',
+        }}
+      >
         <div className="flex gap-2 group">
           <div className="w-3 h-3 rounded-full bg-red-500 group-hover:bg-red-600 transition-colors" />
           <div className="w-3 h-3 rounded-full bg-yellow-500 group-hover:bg-yellow-600 transition-colors" />
           <div className="w-3 h-3 rounded-full bg-green-500 group-hover:bg-green-600 transition-colors" />
         </div>
-        <div className="flex items-center gap-2 text-sm text-gray-400 select-none">
+        <div className="flex items-center gap-2 text-sm select-none" style={{ color: 'var(--terminal-text-muted)' }}>
           <TerminalIcon size={14} />
           <span>{userName}@portfolio:~</span>
         </div>
-        <div className="flex items-center gap-3 text-gray-500">
+        <div className="flex items-center gap-3" style={{ color: 'var(--terminal-text-muted)' }}>
            <Wifi size={14} />
            <Battery size={14} />
            <span className="text-xs">{new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
@@ -149,10 +174,10 @@ const Terminal = () => {
         <div className="max-w-5xl mx-auto min-h-full pb-32">
             {history.map((item) => (
             <div key={item.id} className="mb-4">
-                <div className="flex items-center gap-2 text-terminal-green mb-1">
-                <span className="text-blue-400 font-bold">➜</span>
-                <span className="text-purple-400 font-bold">~</span>
-                <span className="opacity-75">{item.command}</span>
+                <div className="flex items-center gap-2 mb-1">
+                <span className="font-bold" style={{ color: 'var(--terminal-blue)' }}>➜</span>
+                <span className="font-bold" style={{ color: 'var(--terminal-green)' }}>~</span>
+                <span className="opacity-75" style={{ color: 'var(--terminal-text)' }}>{item.command}</span>
                 </div>
                 {item.output && (
                     <OutputLine>
@@ -164,15 +189,16 @@ const Terminal = () => {
             
             {/* Input Line */}
             <div className="flex items-center gap-2 text-lg">
-                <span className="text-blue-400 font-bold">➜</span>
-                <span className="text-purple-400 font-bold">~</span>
+                <span className="font-bold" style={{ color: 'var(--terminal-blue)' }}>➜</span>
+                <span className="font-bold" style={{ color: 'var(--terminal-green)' }}>~</span>
                 <input
                     ref={inputRef}
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    className="flex-1 bg-transparent outline-none border-none text-gray-100 placeholder-gray-600"
+                    className="flex-1 bg-transparent outline-none border-none placeholder-gray-600"
+                    style={{ color: 'var(--terminal-input)' }}
                     autoFocus
                     spellCheck={false}
                     autoComplete="off"
