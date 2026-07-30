@@ -1,6 +1,6 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-
+import userimage from '../content/userimage.jpg'
 const About = ({ lang }) => {
   const data = portfolioData[lang];
 
@@ -25,7 +25,7 @@ const About = ({ lang }) => {
         <div className="hidden md:block shrink-0">
           <div className="w-60 h-60 bg-gray-900 border-2 border-terminal-green relative p-1 shadow-[0_0_15px_rgba(74,222,128,0.3)] flex items-center justify-center overflow-hidden">
             <img
-              src="/src/content/userimage.jpg"
+              src={userimage}
               alt="User Avatar"
               className="w-full h-full object-cover"
             />
