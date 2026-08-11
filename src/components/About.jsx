@@ -1,6 +1,7 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import userimage from '../content/userimage.jpg'
+
 const About = ({ lang }) => {
   const data = portfolioData[lang];
 
@@ -8,7 +9,7 @@ const About = ({ lang }) => {
     <div className="max-w-4xl mt-4">
       <div className="flex flex-col md:flex-row gap-8 items-start">
         <div className="flex-1 space-y-4">
-          <h2 className="text-xl font-bold text-terminal-green mb-2">{lang === 'en' ? '--- ABOUT ME ---' : '--- ОБО МНЕ ---'}</h2>
+          {/* Убираем заголовок, так как он уже есть в commands.js */}
           {data.about.map((paragraph, index) => (
             <p key={index} className="text-gray-300 leading-relaxed text-lg font-mono">
               {paragraph}
