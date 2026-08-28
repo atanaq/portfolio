@@ -47,17 +47,17 @@ export const portfolioData = {
         status: "Completed"
       },
       {
-        name: "Career Center",
+        name: "Job Center",
         description: "A Career Center for students and a recruitment srvice for employers.",
         tech: ["React", "JavaScript", "CSS"],
-        link: "https://atanaq.github.io/career_center1/",
+        link: "https://atanaq.github.io/job-center/",
         status: "Completed"
       },
       {
-        name: "Job Center",
+        name: "Career Center",
         description: "Another career center but with Firebase.",
         tech: ["React", "JavaScript", "CSS"],
-        link: "https://atanaq.github.io/job-center/",
+        link: "https://atanaq.github.io/career_center1/",
         status: "Completed"
       },
       {
@@ -109,17 +109,17 @@ export const portfolioData = {
         status: "Завершен"
       },
       {
-        name: "Career Center",
+        name: "Job Center",
         description: "Центр трудоустройства для студентов и поиск сотрудников для работодателей.",
         tech: ["React", "JavaScript", "CSS"],
-        link: "https://atanaq.github.io/career_center1/",
+        link: "https://atanaq.github.io/job-center/",
         status: "Завершен"
       },
       {
-        name: "Job Center",
+        name: "Career Center",
         description: "Еще один центр трудоустройства, только с Firebase.",
         tech: ["React", "JavaScript", "CSS"],
-        link: "https://atanaq.github.io/job-center/",
+        link: "https://atanaq.github.io/career_center1/",
         status: "Завершен"
       },
       {
