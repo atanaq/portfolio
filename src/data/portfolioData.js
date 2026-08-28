@@ -2,8 +2,8 @@ export const portfolioData = {
   contact: {
     email: "poo.khoo@mail.ru",
     github: "github.com/atanaq",
-    linkedin: "linkedin.com/in/frontend-dev", // Замените на вашу ссылку
-    twitter: "@frontend_dev" // Замените на вашу ссылку или удалите
+    linkedin: "linkedin.com/in/frontend-dev",
+    twitter: "@frontend_dev"
   },
 
   // https://patorjk.com/software/taag/
@@ -36,7 +36,7 @@ export const portfolioData = {
         name: "NovaCore",
         description: "NovaCore is a premium digital product studio.",
         tech: ["React", "JavaScript", "CSS"],
-        link: "https://atanaq.github.io/NovaCore/", // Ссылка на проект
+        link: "https://atanaq.github.io/NovaCore/",
         status: "Completed"
       },
       {
