@@ -44,7 +44,6 @@ body {
   overflow: hidden; /* Prevent scrolling on body, handle in terminal */
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }

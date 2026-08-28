@@ -155,7 +155,6 @@ const Terminal = () => {
         transition: 'background-color 0.3s ease, color 0.3s ease',
       }}
     >
-      {/* Top Bar */}
       <div
         className="flex items-center justify-between px-4 py-2 shrink-0"
         style={{
@@ -179,7 +178,6 @@ const Terminal = () => {
         </div>
       </div>
 
-      {/* Кнопки — вне скроллящейся зоны, слитно с топбаром */}
       <div
         className="shrink-0 flex justify-center px-4 py-3"
         style={{
@@ -195,15 +193,12 @@ const Terminal = () => {
         />
       </div>
 
-      {/* Main Terminal Area */}
       <div
         className="flex-1 overflow-y-auto p-4 md:p-6 scroll-smooth"
         ref={scrollRef}
         onClick={handleContainerClick}
       >
         <div className="max-w-5xl mx-auto min-h-full pb-32">
-
-          {/* История команд */}
           {history.map((item) => (
             <div key={item.id} className="mb-4">
               <div className="flex items-center gap-2 mb-1">
@@ -219,7 +214,6 @@ const Terminal = () => {
             </div>
           ))}
 
-          {/* Строка ввода */}
           <div className="flex items-center gap-2 text-lg">
             <span className="font-bold" style={{ color: 'var(--terminal-blue)' }}>➜</span>
             <span className="font-bold" style={{ color: 'var(--terminal-green)' }}>~</span>

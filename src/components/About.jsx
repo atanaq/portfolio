@@ -9,7 +9,6 @@ const About = ({ lang }) => {
     <div className="max-w-4xl mt-4">
       <div className="flex flex-col md:flex-row gap-8 items-start">
         <div className="flex-1 space-y-4">
-          {/* Убираем заголовок, так как он уже есть в commands.js */}
           {data.about.map((paragraph, index) => (
             <p key={index} className="text-gray-300 leading-relaxed text-lg font-mono">
               {paragraph}
@@ -22,7 +21,6 @@ const About = ({ lang }) => {
           </div>
         </div>
 
-        {/* Pixel Art Avatar Representation */}
         <div className="hidden md:block shrink-0">
           <div className="w-60 h-60 bg-gray-900 border-2 border-terminal-green relative p-1 shadow-[0_0_15px_rgba(74,222,128,0.3)] flex items-center justify-center overflow-hidden">
             <img

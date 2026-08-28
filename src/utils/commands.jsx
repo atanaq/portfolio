@@ -12,7 +12,6 @@ export const getCommandOutput = (cmd, context) => {
   const args = parts.slice(1);
 
   switch (mainCommand) {
-    // Приветственное сообщение
     case 'welcome':
       return (
         <div className="mb-4">
@@ -26,11 +25,9 @@ export const getCommandOutput = (cmd, context) => {
         </div>
       );
 
-    // Показать список доступных команд
     case 'help':
       return <Help lang={context.lang} />;
 
-    // Показать информацию о себе
     case 'about':
       return (
         <div>
@@ -41,7 +38,6 @@ export const getCommandOutput = (cmd, context) => {
         </div>
       );
 
-    // Показать навыки
     case 'skills':
       return (
         <div>
@@ -52,7 +48,6 @@ export const getCommandOutput = (cmd, context) => {
         </div>
       );
 
-    // Показать проекты
     case 'projects':
       return (
         <div>
@@ -63,7 +58,6 @@ export const getCommandOutput = (cmd, context) => {
         </div>
       );
 
-    // Показать контакты
     case 'contact':
       return (
         <div>
@@ -78,20 +72,16 @@ export const getCommandOutput = (cmd, context) => {
         </div>
       );
 
-    // Очистить терминал
     case 'clear':
       context.clearHistory();
       return null;
 
-    // Показать текущего пользователя
     case 'whoami':
       return <p>{context.lang === 'en' ? `You are ${context.userName}, a curious visitor exploring this portfolio.` : `Вы ${context.userName}, любопытный посетитель этого портфолио.`}</p>;
 
-    // Показать текущую дату
     case 'date':
       return <p>{new Date().toString()}</p>;
 
-    // Сменить язык
     case 'lang':
       if (args[0]) {
         if (args[0] === 'en' || args[0] === 'ru') {
@@ -106,7 +96,6 @@ export const getCommandOutput = (cmd, context) => {
         return <p className="text-terminal-green">Language switched to {nextLang.toUpperCase()}</p>;
       }
 
-    // Показать всё сразу
     case 'all':
       return (
         <div className="space-y-8">
@@ -140,11 +129,9 @@ export const getCommandOutput = (cmd, context) => {
         </div>
       );
 
-    // Обработка пустой команды
     case '':
       return null;
 
-    // Команда по умолчанию (если ничего не совпало)
     default:
       return <p className="text-red-400">{context.lang === 'en' ? `Command not found: ${trimmedCmd}. Type 'help' for available commands.` : `Команда не найдена: ${trimmedCmd}. Введите 'help' для списка команд.`}</p>;
   }

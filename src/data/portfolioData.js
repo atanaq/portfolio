@@ -1,10 +1,4 @@
-// Это основной файл с данными для портфолио.
-// Здесь вы можете легко изменить текст, добавить новые проекты или навыки.
-// Структура разделена на 'contact' (общая информация), 'asciiArt' (логотип), 
-// и языковые разделы 'en' (английский) и 'ru' (русский).
-
 export const portfolioData = {
-  // Контактная информация
   contact: {
     email: "poo.khoo@mail.ru",
     github: "github.com/atanaq",
@@ -12,8 +6,7 @@ export const portfolioData = {
     twitter: "@frontend_dev" // Замените на вашу ссылку или удалите
   },
 
-  // ASCII арт, который отображается при приветствии (команда welcome)
-  // Вы можете сгенерировать свой здесь: https://patorjk.com/software/taag/
+  // https://patorjk.com/software/taag/
   asciiArt: `
    ______               _                 _ 
   |  ____|             | |               | |
@@ -24,9 +17,7 @@ export const portfolioData = {
                                             
   `,
 
-  // Данные на Английском языке
   en: {
-    // Раздел "О себе"
     about: [
       "My name is Maxim. I’m 21 and I’m a Front-End developer. ",
       "My tech stack includes HTML, CSS, React, JavaScript, and TypeScript.",
@@ -34,15 +25,12 @@ export const portfolioData = {
       "I specialize in building modern, responsive, and interactive web applications using the React ecosystem.",
       "I enjoy turning complex tasks into simple, beautiful, and intuitive interfaces.",
     ],
-    // Навыки
     skills: {
       languages: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"],
       frameworks: ["React", "Next.js", "Tailwind CSS", "Redux", "Framer Motion"],
       tools: ["Git", "Vite", "Webpack", "Figma", "VS Code"],
       soft: ["Problem Solving", "Teamwork", "Adaptability", "Continuous Learning"]
     },
-    // Проекты
-    // Чтобы добавить новый проект, просто скопируйте объект внутри массива и измените данные.
     projects: [
       {
         name: "NovaCore",
@@ -66,7 +54,6 @@ export const portfolioData = {
         status: "In progress"
       },
     ],
-    // Заголовки разделов (обычно не требуют изменений)
     sectionTitles: {
       skills: "--- SKILLS ---",
       projects: "--- PROJECTS ---",
@@ -78,9 +65,7 @@ export const portfolioData = {
     }
   },
 
-  // Данные на Русском языке
   ru: {
-    // Раздел "О себе"
     about: [
       "Меня зовут Максим. Мне 21 и я являюсь Frontend-разработчиком.",
       "Мой стек HTML, CSS, React, JavaScript, TypeScript.",
@@ -88,14 +73,12 @@ export const portfolioData = {
       "Я специализируюсь на создании современных, адаптивных и интерактивных веб-приложений с использованием экосистемы React.",
       "Мне нравится превращать сложные задачи в простые, красивые и интуитивно понятные интерфейсы.",
     ],
-    // Навыки
     skills: {
       languages: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"],
       frameworks: ["React", "Next.js", "Tailwind CSS", "Redux", "Framer Motion"],
       tools: ["Git", "Vite", "Webpack", "Figma", "VS Code"],
       soft: ["Решение проблем", "Командная работа", "Адаптивность", "Постоянное обучение"]
     },
-    // Проекты
     projects: [
       {
         name: "NovaCore",
@@ -119,7 +102,6 @@ export const portfolioData = {
         status: "В процессе"
       },
     ],
-    // Заголовки разделов
     sectionTitles: {
       skills: "--- НАВЫКИ ---",
       projects: "--- ПРОЕКТЫ ---",

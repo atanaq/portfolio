@@ -37,7 +37,6 @@ const CommandButtons = ({ onCommandClick, lang, onClear, onLanguageToggle }) => 
         </button>
       ))}
       
-      {/* Language Toggle Button */}
       <button
         onClick={onLanguageToggle}
         className="flex items-center gap-2 px-3 py-1.5 text-sm font-mono rounded transition-all hover:scale-105 active:scale-95"
@@ -59,7 +58,6 @@ const CommandButtons = ({ onCommandClick, lang, onClear, onLanguageToggle }) => 
         <span>{lang === 'en' ? 'RU' : 'EN'}</span>
       </button>
 
-      {/* Clear Button */}
       <button
         onClick={onClear}
         className="flex items-center gap-2 px-3 py-1.5 text-sm font-mono rounded transition-all hover:scale-105 active:scale-95"

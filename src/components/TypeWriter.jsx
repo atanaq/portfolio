@@ -4,16 +4,13 @@ const TypeWriter = ({ children, speed = 15 }) => {
   const [displayedContent, setDisplayedContent] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Проверяем, является ли children простым текстом
   const isSimpleText = typeof children === 'string';
 
   useEffect(() => {
-    // Если это React компонент, показываем сразу
     if (!isSimpleText) {
       return;
     }
 
-    // Сбрасываем при изменении children
     setDisplayedContent('');
     setCurrentIndex(0);
   }, [children, isSimpleText]);
@@ -31,7 +28,6 @@ const TypeWriter = ({ children, speed = 15 }) => {
     }
   }, [currentIndex, children, isSimpleText, speed]);
 
-  // Если это React компонент или массив, показываем сразу
   if (!isSimpleText) {
     return <>{children}</>;
   }
