@@ -47,6 +47,20 @@ export const portfolioData = {
         status: "Completed"
       },
       {
+        name: "Career Center",
+        description: "A Career Center for students and a recruitment srvice for employers.",
+        tech: ["React", "JavaScript", "CSS"],
+        link: "https://atanaq.github.io/career_center1/",
+        status: "Completed"
+      },
+      {
+        name: "Job Center",
+        description: "Another career center but with Firebase.",
+        tech: ["React", "JavaScript", "CSS"],
+        link: "https://atanaq.github.io/job-center/",
+        status: "Completed"
+      },
+      {
         name: "Mir Okon",
         description: "Mir Okon is a website created to automate the operations and calculations of the window business.",
         tech: ["React", "JavaScript", "CSS", "Electron JS"],
@@ -92,6 +106,20 @@ export const portfolioData = {
         description: "VanguardCreative — креативное агентство.",
         tech: ["React", "JavaScript", "CSS"],
         link: "https://atanaq.github.io/VanguardCreative/",
+        status: "Завершен"
+      },
+      {
+        name: "Career Center",
+        description: "Центр трудоустройства для студентов и поиск сотрудников для работодателей.",
+        tech: ["React", "JavaScript", "CSS"],
+        link: "https://atanaq.github.io/career_center1/",
+        status: "Завершен"
+      },
+      {
+        name: "Job Center",
+        description: "Еще один центр трудоустройства, только с Firebase.",
+        tech: ["React", "JavaScript", "CSS"],
+        link: "https://atanaq.github.io/job-center/",
         status: "Завершен"
       },
       {
